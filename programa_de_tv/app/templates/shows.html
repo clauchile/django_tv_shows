@@ -34,9 +34,9 @@
                         <td align="center"> {{p.network}}</td>
                         <td align="center"> {{p.release_date |date:'d-M-Y'}}</td>
                         <!-- <td align="left"> {{p.description}}</td> -->
-                        <td align="center"> <a href="shows/{{p.id}}" class="badge bg-dark border border-success">Ver</a>
-                            <a href="shows/{{p.id}}/edit"name="editar" class="badge bg-dark border border-primary">Editar</a>
-                            <a value={{p.id}} href="shows/{{p.id}}/destroy"class="badge bg-dark border border-danger" name="borrar">Borrar</a>
+                        <td align="center"> <a href="shows/{{p.id}}" class="badge bg-dark border border-success"><i class="far fa-eye me-1"></i>Ver</a>
+                            <a href="shows/{{p.id}}/edit"name="editar"  class="badge bg-dark border border-primary"><i class="far fa-edit"></i>Editar</a>
+                            <a value={{p.id}} href="shows/{{p.id}}/destroy"class="badge bg-dark border border-danger" name="borrar"><i class="far fa-trash-alt me-1"></i>Borrar</a>
                         </td>
                         <!--                             
                             {% comment %} <a href="#" class="btn btn-success btn-lg">
@@ -52,7 +52,7 @@
 
                 </tbody>
             </table>
-            <a href="/shows/new" class="badge bg-dark border border-primary" name="editar">Agregar un nuevo show </a>
+            <a href="/shows/new" class="badge bg-dark border border-primary" name="editar"><i class="fas fa-plus-circle me-1"></i>Agregar un nuevo show </a>
         </div>
     </div>
 </div>

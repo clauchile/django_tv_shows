@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+
+{% block titulo %}<title>Update</title>{%endblock%}
+
+
+{%block contenido%}
+
+<div class="row text-light">
+
+    <div class="col col-12 ">
+        <!-- <div class="">
+        </div> -->
+        <!-- <div class="col text-center">
+        </div> -->
+        <div class="row text-align-right">
+            <div class="col text-end mt-3">
+                <a href="/" class="badge bg-dark border border-primary">Go Back</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="  col-sm-12 offset-lg-4 col-lg-4 ">
+                <h1 class="h2 text-center">TV Show {{editar.id}}</h1>
+                <!-- <div class="mb-4">
+                </div> -->
+                <div class="row">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <label for="titulo-id" class="form-label me-2">Título</label>
+                        <input type="text" class="form-control" id="titulo-id" name="titulo" value='{{editar.title}}'>
+                        <div class="row d-flex  mt-1">
+                            <div class="col ">
+                                <label for="plataforma-id" class="form-label me-2">Plataforma</label>
+                                <input type="text" class="form-control" id="plataforma-id" name="plataforma"
+                                    value='{{editar.network}}'>
+                            </div>
+                            <div class="col">
+                                <label for="release_date-id" class="form-label me-2">F. de lanzamiento</label>
+                                <input type="date" class="form-control" id="release_date-id" name="release_date"
+                                    value='{{editar.release_date|date:"Y-m-d"}}'>
+                            </div>
+                        </div>
+                        <div class=" mb-2  mt-1">
+                            <label for="descripcion-id" class="form-label me-2">Descripción</label>
+                            <input type="text" class="form-control" id="descripcion-id" name="descripcion"
+                                value='{{editar.description}}'>
+                        </div>
+                        <div class=" col text-center">
+                            <button type="submit" class="btn btn-primary border border-2 my-3">Actualizar</button>
+                        </div>
+                        <div class=" col text-center">
+                            <a href="/shows/{{editar.id}}" class="badge bg-dark border border-primary">Mostrar Show</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+{%endblock%}

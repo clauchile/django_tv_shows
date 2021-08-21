@@ -1,0 +1,15 @@
+
+body {
+    background-color:rgb(14, 11, 8)
+}
+
+@media (min-width: 768px) {
+    #text-center-sm {
+        text-align: center;
+    }
+}
+
+*a {
+    text-decoration: none;
+
+}

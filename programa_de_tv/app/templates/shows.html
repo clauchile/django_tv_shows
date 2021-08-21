@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+
+{% block titulo %}<title>Mostrar</title>{%endblock%}
+
+
+{%block contenido%}
+
+<div class="row">
+
+    <div class="col col-12 mt-3">
+        <h1 class=" offset-lg-2 h2 text-left">Todos lo shows</h1>
+        <!-- <div class="">
+        </div> -->
+        <!-- <div class="col text-center">
+        </div> -->
+        <div class=" offset-lg-1 col-sm-12 col-md-10 mt-4">
+            <table class="table table-bordered  table table-sm table-condensed border-light table-dark table-hover">
+                <h1 class="h1 text-light " id = "text-center-sm">Tabla de contenido</h1>
+                <thead>
+                    <tr>
+                        <th class ="text-center">Id</th>
+                        <th class ="text-center">Título</th>
+                        <th class ="text-center">Plataforma</th>
+                        <th class ="text-center">Fecha de lanzamiento</th>
+                        <!-- <th>Descripción</th> -->
+                        <th class ="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for p in programas%}
+                    <tr class="table-active">
+                        <td align="center"> {{p.id}}</td>
+                        <td align="left"> {{p.title}}</td>
+                        <td align="center"> {{p.network}}</td>
+                        <td align="center"> {{p.release_date |date:'d-M-Y'}}</td>
+                        <!-- <td align="left"> {{p.description}}</td> -->
+                        <td align="center"> <a href="shows/{{p.id}}" class="badge bg-dark border border-success">Ver</a>
+                            <a href="shows/{{p.id}}/edit"name="editar" class="badge bg-dark border border-primary">Editar</a>
+                            <a value={{p.id}} href="shows/{{p.id}}/destroy"class="badge bg-dark border border-danger" name="borrar">Borrar</a>
+                        </td>
+                        <!--                             
+                            {% comment %} <a href="#" class="btn btn-success btn-lg">
+                            <span class="glyphicon glyphicon-print"></span> Print 
+                            </a> {% endcomment %} -->
+                        <!-- <td> {{u.email_address}}</td>
+                        <td> {{u.age}}</td>
+                        <td> {{u.created_at|date:'d-m-Y'}}</td>
+                        <td> {{u.updated_at|date:'d-m-Y'}}</td> -->
+                    </tr>
+                    {% endfor %}
+
+
+                </tbody>
+            </table>
+            <a href="/shows/new" class="badge bg-dark border border-primary" name="editar">Agregar un nuevo show </a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+
+{% block titulo %}<title>Detalles</title>{%endblock%}
+
+
+{%block contenido%}
+
+<div class="row text-light">
+
+    <div class="col col-12 mt-3">
+        <div class="row justify-content-end">
+            <div class="col text-end mt-3 ">
+                <a href='/' class="badge bg-dark border border-primary">Go Back</a>
+            </div>
+            <div class="">
+                <h2 class="h2 mb-3">TV Show {{programas.id}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4> Título: {{programas.title}}</h4>
+        <h4> Plataforma: {{programas.network}}</h4>
+        <h4> Fecha de estreno: {{programas.release_date|date:'d-M-Y'}}</h4>
+        <h4> Descripción: {{programas.description}}</h4>
+        <h4 class="mt-5"> Actualizado el {{programas.updated_at|date:'d-M-Y'}}</h4>
+<div class="row d-flex">
+    <div class="col mt-5">
+        <a href="/shows/{{programas.id}}/edit" class="badge bg-dark border border-primary">Editar</a>
+
+        
+        
+        <a href="/shows/{{programas.id}}/destroy" class="badge bg-dark border border-danger">Eliminar</a>
+    </div>
+</div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

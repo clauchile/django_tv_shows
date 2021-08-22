@@ -1,15 +1,16 @@
 
-body {
-    background-color:rgb(14, 11, 8)
-}
 
-@media (min-width: 768px) {
+@media (min-width: 360px) and (max-width: 720px) {
     #text-center-sm {
         text-align: center;
     }
 }
 
-*a {
+* a {
     text-decoration: none;
 
+}
+
+.text-justify{
+    text-align: justify;
 }

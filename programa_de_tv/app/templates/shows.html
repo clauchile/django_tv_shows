@@ -8,22 +8,22 @@
 <div class="row">
 
     <div class="col col-12 mt-3">
-        <h1 class=" offset-lg-2 h2 text-left">Todos lo shows</h1>
+        <!-- <h1 class="h2 text-left">Todos lo shows</h1> -->
         <!-- <div class="">
         </div> -->
         <!-- <div class="col text-center">
         </div> -->
         <div class=" offset-lg-1 col-sm-12 col-md-10 mt-4">
             <table class="table table-bordered  table table-sm table-condensed border-light table-dark table-hover">
-                <h1 class="h1 text-light " id = "text-center-sm">Tabla de contenido</h1>
+                <h1 class="h1 text-light " id="text-center-sm">Todos los programas</h1>
                 <thead>
                     <tr>
-                        <th class ="text-center">Id</th>
-                        <th class ="text-center">Título</th>
-                        <th class ="text-center">Plataforma</th>
-                        <th class ="text-center">Fecha de lanzamiento</th>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Título</th>
+                        <th class="text-center">Plataforma</th>
+                        <th class="text-center">Fecha de lanzamiento</th>
                         <!-- <th>Descripción</th> -->
-                        <th class ="text-center">Acciones</th>
+                        <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,9 +34,12 @@
                         <td align="center"> {{p.network}}</td>
                         <td align="center"> {{p.release_date |date:'d-M-Y'}}</td>
                         <!-- <td align="left"> {{p.description}}</td> -->
-                        <td align="center"> <a href="shows/{{p.id}}" class="badge bg-dark border border-success"><i class="far fa-eye me-1"></i>Ver</a>
-                            <a href="shows/{{p.id}}/edit"name="editar"  class="badge bg-dark border border-primary"><i class="far fa-edit"></i>Editar</a>
-                            <a value={{p.id}} href="shows/{{p.id}}/destroy"class="badge bg-dark border border-danger" name="borrar"><i class="far fa-trash-alt me-1"></i>Borrar</a>
+                        <td align="center"> <a href="shows/{{p.id}}" class="badge bg-dark border border-success"><i
+                                    class="far fa-eye me-1"></i>Ver</a>
+                            <a href="shows/{{p.id}}/edit" name="editar" class="badge bg-dark border border-primary"><i
+                                    class="far fa-edit"></i>Editar</a>
+                            <a value={{p.id}} href="shows/{{p.id}}/destroy" class="badge bg-dark border border-danger"
+                                name="borrar"><i class="far fa-trash-alt me-1"></i>Borrar</a>
                         </td>
                         <!--                             
                             {% comment %} <a href="#" class="btn btn-success btn-lg">
@@ -48,11 +51,12 @@
                         <td> {{u.updated_at|date:'d-m-Y'}}</td> -->
                     </tr>
                     {% endfor %}
-
-
                 </tbody>
             </table>
-            <a href="/shows/new" class="badge bg-dark border border-primary" name="editar"><i class="fas fa-plus-circle me-1"></i>Agregar un nuevo show </a>
+            <hr class="text-light">
+            <a href="/shows/new" class="badge bg-dark border border-primary" name="editar"><i
+                    class="fas fa-plus-circle me-1"></i>Agregar un nuevo show </a>
+                    <!-- <li><i class="icon-li icon-ok"></i>Embedded icon using the &lt;i&gt; tag</li> -->
         </div>
     </div>
 </div>

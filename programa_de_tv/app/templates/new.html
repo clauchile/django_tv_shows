@@ -20,12 +20,14 @@
                 <div class="row">
                     <form action="" method="POST">
                         {% csrf_token %}
+                        <label for="new-id" class="form-label me-2"></label>
+                        <input type="hidden" name='new'>
                         <label for="titulo-id" class="form-label me-2">Título</label>
-                        <input type="text" class="form-control" id="titulo-id" name="titulo">
+                        <input type="text" class="form-control" id="titulo-id" autocomplete = "off" name="titulo">
                         <div class="row d-flex  mt-1">
                             <div class="col">
                                 <label for="plataforma-id" class="form-label me-2">Plataforma</label>
-                                <input type="text" class="form-control" id="plataforma-id" name="plataforma">
+                                <input type="text" class="form-control" id="plataforma-id" minlength="3" name="plataforma" required>
                             </div>
                             <div class="col text-light">
                                 <label for="release-id" class="form-label me-2">F. de lanzamiento</label>

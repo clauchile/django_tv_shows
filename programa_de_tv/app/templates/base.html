@@ -40,7 +40,7 @@
             "progressBar": true,
 
         }
-        {% if messages%}
+        {% if messages %}
             {% for message in messages %}
                 toastr.{{ message.tags }}('{{message}}')
             {% endfor %} 

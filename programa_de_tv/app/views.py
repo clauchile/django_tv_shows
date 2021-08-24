@@ -40,6 +40,7 @@ def new(request):
                 messages.error(request, value)
                 print(errors)
                 # request.session['show_titulo'] = request.POST['id']
+                # request.session['show_nuevo'] = request.POST['new']
                 request.session['show_titulo'] = request.POST['titulo']
                 request.session['show_plataforma'] =request.POST['plataforma']
                 request.session['show_release_date'] = request.POST['release_date']
@@ -78,7 +79,7 @@ def edit(request, dato):
         return render(request, 'edit.html', context)
 
     if request.method == 'POST':
-        # print(request.POST)
+        print(f'"este es el popst = "  {request.POST}')
         errors = Show.objects.basic_validator(request.POST)
         # compruebe si el diccionario de errores tiene algo en él
         if len(errors) > 0:
@@ -87,6 +88,8 @@ def edit(request, dato):
                 messages.error(request, value)
                 print(errors)
                 # request.session['show_titulo'] = request.POST['id']
+                
+                
                 request.session['show_titulo'] = request.POST['titulo']
                 request.session['show_plataforma'] =request.POST['plataforma']
                 request.session['show_release_date'] = request.POST['release_date']
@@ -98,12 +101,19 @@ def edit(request, dato):
 
         else:
             change = Show.objects.get(id=dato)
+            if change.title != request.POST['titulo']:
         #     # print(change + "ok")
 
-            change.title = request.POST['titulo']
-            change.network = request.POST['plataforma']
-            change.release_date = request.POST['release_date']
-            change.description = request.POST['descripcion']
+                change.title = request.POST['titulo']
+                change.network = request.POST['plataforma']
+                change.release_date = request.POST['release_date']
+                change.description = request.POST['descripcion']
+
+            else:
+
+                change.network = request.POST['plataforma']
+                change.release_date = request.POST['release_date']
+                change.description = request.POST['descripcion']
 
             change.save()
             messages.add_message(request, 25 , f" el Show {dato}, fue actualizado con exito")

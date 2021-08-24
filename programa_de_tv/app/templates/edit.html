@@ -26,6 +26,7 @@
                     <form action="" method="POST">
                         {% csrf_token %}
                         <label for="titulo-id" class="form-label me-2">Título</label>
+                        <input type="hidden" name="form" id="form-id" value = "{{editar.id}}">
                         <input type="text" class="form-control" id="titulo-id" name="titulo" required value='{{editar.title}}'>
                         <div class="row d-flex  mt-1">
                             <div class="col ">

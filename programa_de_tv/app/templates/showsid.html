@@ -22,10 +22,10 @@
         <h4> Plataforma: {{programas.network}}</h4>
         <h4> Fecha de estreno: {{programas.release_date|date:'d-M-Y'}}</h4>
         <h4 class= "text-justify">Descripción: {{programas.description}}</h4>
-        <h4 class="mt-5"> Actualizado el {{programas.updated_at}}</h4>
+        <h4 class="mt-5"> Actualizado el {{programas.updated_at|date:'d-M-Y'}}</h4>
         <!-- |date:'d-M-Y' -->
 <div class="row d-flex  ">
-    <div class="col text-center text-md-start mt-5">
+    <div class="col text-center text-md-start my-5">
         <a href="/shows/{{programas.id}}/edit" class="badge bg-dark border border-primary"><i class="far fa-edit"></i>Editar</a>
 
         
